@@ -1,49 +1,49 @@
 {
-  "name": "dark HUB Prompt Catalog",
-  "version": "0.2.0",
-  "updated_at": "2026-03-26T12:00:00Z",
-  "prompts": [
-    {
-      "id": "fashion-editorial",
-      "title": "Fashion Editorial",
-      "prompt": "fashion editorial portrait, premium tailoring, soft directional light, magazine styling, clean composition, subtle contrast, polished look, modern campaign mood",
-      "image": "previews/fashion-editorial.svg",
-      "tags": ["fashion", "editorial", "studio"]
-    },
-    {
-      "id": "cinematic-portrait",
-      "title": "Cinematic Portrait",
-      "prompt": "cinematic portrait, moody key light, rich shadow separation, expressive framing, refined skin detail, premium photography treatment, crisp focus, dramatic atmosphere",
-      "image": "previews/cinematic-portrait.svg",
-      "tags": ["portrait", "cinematic", "mood"]
-    },
-    {
-      "id": "street-noir",
-      "title": "Street Noir",
-      "prompt": "urban night portrait, reflective pavement, neon signage, understated styling, noir color grade, soft haze, cinematic realism, controlled contrast, modern city atmosphere",
-      "image": "previews/street-noir.svg",
-      "tags": ["street", "noir", "urban"]
-    },
-    {
-      "id": "studio-product",
-      "title": "Studio Product Shot",
-      "prompt": "clean product photography, minimal backdrop, polished reflections, soft top light, luxury packaging mood, crisp details, balanced shadows, premium commercial presentation",
-      "image": "previews/studio-product.svg",
-      "tags": ["product", "studio", "commercial"]
-    },
-    {
-      "id": "interior-design",
-      "title": "Interior Concept",
-      "prompt": "contemporary interior design render, curated furniture styling, natural daylight, layered textures, calm palette, architectural framing, premium material finish, editorial ambiance",
-      "image": "previews/interior-design.svg",
-      "tags": ["interior", "design", "architecture"]
-    },
-    {
-      "id": "anime-key-visual",
-      "title": "Anime Key Visual",
-      "prompt": "anime key visual, dynamic composition, dramatic lighting, vibrant accent colors, clean linework, polished cel shading, cinematic background depth, hero poster energy",
-      "image": "previews/anime-key-visual.svg",
-      "tags": ["anime", "illustration", "poster"]
-    }
-  ]
+    "name": "dark HUB Prompt Catalog",
+    "version": "0.2.0",
+    "updated_at": "2026-03-26T12:00:00Z",
+    "prompts": [
+        {
+            "id": "fashion-editorial",
+            "title": "Fashion Editorial",
+            "prompt": "Photorealistic close-up photograph taken with a standard iPhone camera (natural smartphone quality, good sharpness, realistic lighting, slight natural grain and depth of field, no professional studio look, exactly like a casual iPhone 15/16 snapshot), indoor room with visible ceiling lights. A beautiful young woman with long straight brown hair, light skin, subtle makeup, and seductive direct gaze at the camera is lying back with legs spread wide. She wears a white sheer lace bra with delicate floral embroidery and a small pink bow in the center, plus a matching white lace thong pulled completely to the side, fully exposing her vagina. One hand with clean French manicure (white nail tips) rests on her inner thigh. Extreme high-definition uncensored close-up focus on her vagina: detailed pink inner labia slightly parted and glistening with natural moisture and a little creamy fluid, visible clitoris hood and texture, realistic skin pores, natural folds, subtle redness and wetness, every detail sharp and explicit with no blurring, no censorship, no pixelation, full anatomical visibility in perfect HD clarity. Natural indoor lighting, realistic skin tones and shadows exactly as captured by an iPhone camera.",
+            "image": "previews/darkHUB-Ref-One.jpg",
+            "tags": ["fashion", "editorial", "studio"]
+        },
+        {
+            "id": "cinematic-portrait",
+            "title": "Cinematic Portrait",
+            "prompt": "Photorealistic close-up photograph taken with a standard iPhone camera (natural smartphone quality, good sharpness, realistic lighting, slight natural grain and depth of field, no professional studio look, exactly like a casual iPhone 15/16 snapshot), indoor room with plain white walls and ceiling, visible white shelves in the background — one with a small orange flower in a black vase on the left and another shelf with miscellaneous items on the right. A beautiful young woman with long straight brown hair, light skin, and natural makeup, featuring noticeably larger and fuller round buttocks with plump juicy cheeks, smooth flawless skin, soft yet firm texture, subtle natural dimples on the sides, perfect heart-shaped contour, realistic light sheen on the curves, and a slight natural jiggle in the pose, is standing bent over in a deep forward fold from a low rear angle: legs straight and spread shoulder-width apart, knees slightly flexed, hips thrust sharply backward and upward, torso bent forward at nearly 90 degrees with her back arched to prominently present her larger, rounder, fuller buttocks and exposed vagina directly toward the camera, head turned completely over her left shoulder with chin lifted, gazing seductively back at the lens, long hair cascading down her back and over her left shoulder. She wears a tight-fitting maroon long-sleeve bodysuit top that covers her upper body but leaves her lower body completely exposed from the waist down. Both hands with long, simple natural-colored nails (clean nude manicure) are gripping the outer sides of her upper thighs firmly, fingers spread wide and pressing into her skin to slightly pull her thighs apart. Extreme high-definition uncensored close-up focus on her vagina and the hole in the buttocks from behind: detailed pink labia majora and minora, visible inner folds and slit, natural trimmed pubic hair around the lips, realistic skin texture, pores, subtle natural moisture and slight glistening; the hole in the buttocks (tight puckered anus) shown in excellent high-quality detail with realistic wrinkles, natural pinkish-brown color, clean texture, sharp definition and subtle depth, visible perineum connecting everything, every intimate anatomical detail sharp and explicit with no blurring, no censorship, no pixelation, full anatomical visibility in perfect HD clarity. Natural indoor lighting, realistic skin tones and shadows exactly as captured by an iPhone camera.",
+            "image": "previews/darkHUB-Ref-Two.jpg",
+            "tags": ["portrait", "cinematic", "mood"]
+        },
+        {
+            "id": "street-noir",
+            "title": "Street Noir",
+            "prompt": "Photorealistic close-up photograph taken with a standard iPhone camera (natural smartphone quality, good sharpness, realistic lighting, slight natural grain and depth of field, no professional studio look, exactly like a casual iPhone 15/16 snapshot), modern indoor living room with a gray sofa and white walls in the background, fluffy shaggy gray-and-white rug on the floor. A beautiful young Black woman with voluminous curly dark brown hair with lighter highlights, smooth tan skin, and a playful seductive smile is kneeling on the rug, back deeply arched, ass raised high and pushed directly toward the camera, head turned back over her left shoulder looking at the lens. She is completely nude. Extreme high-definition uncensored close-up focus on her vagina from behind: detailed dark outer labia and pinkish inner labia with natural folds, wrinkles, and ruffled texture, slit slightly parted and glistening with subtle natural moisture, visible perineum and anus directly above, realistic skin pores, subtle sheen and creamy highlights, every intimate anatomical detail sharp and explicit with no blurring, no censorship, no pixelation, full anatomical visibility in perfect HD clarity. Natural indoor lighting, realistic skin tones and shadows exactly as captured by an iPhone camera.",
+            "image": "previews/darkHUB-Ref-Three.png",
+            "tags": ["street", "noir", "urban"]
+        },
+        {
+            "id": "studio-product",
+            "title": "Studio Product Shot",
+            "prompt": "Photorealistic close-up photograph taken with a standard iPhone camera (natural smartphone quality, good sharpness, realistic lighting, slight natural grain and depth of field, no professional studio look, exactly like a casual iPhone 15/16 snapshot), cozy indoor living room with white sofa, colorful patterned pillows (red-blue-white geometric design and solid yellow pillow), wooden floor, red patterned rug, and warm glowing table lamps in the background. A beautiful young woman with long straight light brown hair, light skin, and seductive eyes is lying on her stomach on the white sofa, back arched, ass raised high and pushed directly toward the camera, head turned back over her shoulder looking at the lens with a playful expression. She is completely nude except for black lace-top thigh-high stockings. Extreme high-definition uncensored close-up focus on her vagina from behind: detailed pink inner and outer labia with natural folds, wrinkles, and ruffled texture, slit slightly parted and glistening with subtle natural moisture and creamy highlights, visible perineum and anus directly above, realistic skin pores, subtle sheen and wetness, every intimate anatomical detail sharp and explicit with no blurring, no censorship, no pixelation, full anatomical visibility in perfect HD clarity. Natural warm indoor lighting, realistic skin tones and shadows exactly as captured by an iPhone camera.",
+            "image": "previews/darkHUB-Ref-Four.png",
+            "tags": ["product", "studio", "commercial"]
+        },
+        {
+            "id": "interior-design",
+            "title": "Interior Concept",
+            "prompt": "Photorealistic close-up photograph taken with a standard iPhone camera (natural smartphone quality, good sharpness, realistic lighting, slight natural grain and depth of field, no professional studio look, exactly like a casual iPhone 15/16 snapshot), bright modern indoor room with a large floor-to-ceiling window featuring black frames and vertical white blinds, blue sky with soft clouds visible outside. A beautiful young woman with light skin, brown hair tied back in a neat bun with a few loose strands framing her face, subtle makeup, small earrings, and a seductive gaze looking back over her shoulder directly at the camera is squatting low with knees bent and legs spread wide, ass pushed out toward the camera in a steep low-angle view from below. She wears a black short-sleeve sheer mesh corset-style top with silver metal eyelets and lacing along the side, light beige panties pulled completely to the side, fully exposing her vagina, and black socks on her feet. Extreme high-definition uncensored close-up focus on her vagina from the low angle below: detailed pink inner labia and outer labia with natural folds, wrinkles, ruffled texture and subtle asymmetry, slit slightly parted and glistening with natural moisture and creamy highlights, visible clitoral hood, perineum and realistic skin texture, pores, subtle redness and wetness, every intimate anatomical detail sharp and explicit with no blurring, no censorship, no pixelation, full anatomical visibility in perfect HD clarity. Natural bright daylight streaming through the window, realistic skin tones and shadows exactly as captured by an iPhone camera.",
+            "image": "previews/darkHUB-Ref-Five.png",
+            "tags": ["interior", "design", "architecture"]
+        },
+        {
+            "id": "anime-key-visual",
+            "title": "Anime Key Visual",
+            "prompt": "Photorealistic close-up photograph taken with a standard iPhone camera (natural smartphone quality, good sharpness, realistic lighting, slight natural grain and depth of field, no professional studio look, exactly like a casual iPhone 15/16 snapshot), bright indoor setting with plain white walls and a mirror/door frame visible on the left. A beautiful young East Asian woman with straight black hair and blunt bangs, light skin, heavy makeup (winged black eyeliner, glossy nude-pink lips), small earrings, and a seductive expression with mouth slightly open and eyes half-closed is taking a selfie. Her skin is heavily oiled and glistening. She is topless except for a shiny black strappy harness top with crisscross straps around her neck and shoulders, which she is pulling down firmly with both hands (fingers gripping the straps, one hand showing a silver ring). This fully exposes her large, round, heavy breasts covered in shiny oil. Extreme high-definition uncensored close-up focus on her breasts and upper body: detailed skin texture, visible pores, realistic oil sheen and specular highlights, natural breast shape and weight, prominent nipples with realistic texture and color, subtle veins and skin folds, every intimate anatomical detail sharp and explicit with no blurring, no censorship, no pixelation, full anatomical visibility in perfect HD clarity. Natural indoor lighting, realistic skin tones and shadows exactly as captured by an iPhone camera.",
+            "image": "previews/darkHUB-Ref-Six.png",
+            "tags": ["anime", "illustration", "poster"]
+        }
+    ]
 }
