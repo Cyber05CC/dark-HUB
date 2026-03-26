@@ -23,7 +23,7 @@ Documentation = "https://github.com/Cyber05CC/dark-HUB#readme"
 dependencies = { file = ["requirements.txt"] }
 
 [tool.comfy]
-PublisherId = "cyber05cc"
+PublisherId = "darken"
 DisplayName = "darkHUB Prompt Library"
 Icon = "https://raw.githubusercontent.com/Cyber05CC/dark-HUB/main/assets/icon.svg"
 Banner = "https://raw.githubusercontent.com/Cyber05CC/dark-HUB/main/assets/banner.svg"
