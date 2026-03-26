@@ -1,0 +1,19 @@
+[project]
+name = "comfyui-darkhub"
+description = "Remote-synced prompt library node for ComfyUI with image-first browsing UI and workflow-portable prompt catalogs."
+version = "0.1.0"
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = [
+  "aiohttp>=3.9,<4.0",
+]
+
+[project.urls]
+Repository = "https://github.com/Cyber05CC/dark-HUB"
+Documentation = "https://github.com/Cyber05CC/dark-HUB#readme"
+"Bug Tracker" = "https://github.com/Cyber05CC/dark-HUB/issues"
+
+[tool.comfy]
+PublisherId = "cyber05cc"
+DisplayName = "ComfyUI darkHUB"
+Icon = "https://raw.githubusercontent.com/Cyber05CC/dark-HUB/main/js/darkHUBcreator.png"

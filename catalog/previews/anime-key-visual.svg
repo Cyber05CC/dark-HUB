@@ -1,0 +1,16 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="640" fill="#F7F1EA"/>
+  <rect x="40" y="40" width="880" height="560" rx="36" fill="url(#bg)"/>
+  <circle cx="726" cy="172" r="110" fill="rgba(255,220,160,0.24)"/>
+  <path d="M626 452L706 244L772 452H626Z" fill="rgba(255,255,255,0.14)"/>
+  <path d="M510 504C552 364.13 612.13 296 690 296C767.87 296 828 364.13 870 504H510Z" fill="rgba(255,255,255,0.1)"/>
+  <text x="112" y="208" fill="#FFF9F6" font-size="62" font-family="Segoe UI Variable, Bahnschrift, sans-serif" font-weight="700">Anime</text>
+  <text x="112" y="274" fill="#FFF9F6" font-size="62" font-family="Segoe UI Variable, Bahnschrift, sans-serif" font-weight="700">Key Visual</text>
+  <text x="112" y="336" fill="#FFF9F6" fill-opacity="0.9" font-size="26" font-family="Segoe UI Variable, Bahnschrift, sans-serif">sunset skyline  •  poster framing  •  polished cel shading</text>
+  <defs>
+    <linearGradient id="bg" x1="72" y1="74" x2="880" y2="566" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B04A31"/>
+      <stop offset="1" stop-color="#2A214A"/>
+    </linearGradient>
+  </defs>
+</svg>

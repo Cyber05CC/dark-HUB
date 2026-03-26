@@ -1,0 +1,49 @@
+{
+  "name": "dark HUB Prompt Catalog",
+  "version": "0.2.0",
+  "updated_at": "2026-03-26T12:00:00Z",
+  "prompts": [
+    {
+      "id": "asian-mirror-selfie",
+      "title": "Mirror Selfie Muse",
+      "prompt": "adult asian woman taking a mirror selfie in a softly lit room, natural pose, glossy black hair, warm skin tones, everyday luxury mood, clean background, realistic smartphone photo framing, subtle flash reflection, detailed face, polished social aesthetic",
+      "image": "https://i.pinimg.com/736x/a5/23/79/a52379a9f16cb4e431a7f5518fc886f0.jpg",
+      "tags": ["portrait", "selfie", "lifestyle"]
+    },
+    {
+      "id": "korean-studio-fashion",
+      "title": "Korean Studio Fashion",
+      "prompt": "adult korean woman in an elegant brown studio fashion portrait, refined styling, sunglasses, luxury travel mood, soft directional light, premium editorial photography, warm neutrals, sharp facial detail, composed pose, polished magazine campaign look",
+      "image": "https://i.pinimg.com/736x/02/d0/5a/02d05a225b26e74dd30c039d357fa87c.jpg",
+      "tags": ["fashion", "studio", "editorial"]
+    },
+    {
+      "id": "clean-smile-portrait",
+      "title": "Clean Smile Portrait",
+      "prompt": "adult asian woman portrait with a gentle smile, bright natural light, fresh skin texture, airy neutral backdrop, candid elegance, sharp eyes, premium lifestyle photography, minimal styling, soft contrast, clean and modern beauty image",
+      "image": "https://i.pinimg.com/736x/df/04/b1/df04b1020071bbd8845f21be0bd4a41e.jpg",
+      "tags": ["beauty", "portrait", "soft"]
+    },
+    {
+      "id": "monochrome-profile",
+      "title": "Monochrome Profile",
+      "prompt": "adult asian woman in a monochrome profile portrait, dramatic side lighting, fine hair movement, black and white fashion photography, sculpted cheekbones, dark backdrop, editorial contrast, elegant composition, timeless studio mood, crisp detail",
+      "image": "https://i.pinimg.com/236x/d3/f3/24/d3f32422575f3ae547c91ed1bfe081a7.jpg",
+      "tags": ["monochrome", "profile", "studio"]
+    },
+    {
+      "id": "city-editorial",
+      "title": "City Editorial",
+      "prompt": "adult asian woman in a clean editorial street portrait, urban background, structured blazer, polished makeup, natural confidence, premium fashion campaign lighting, muted city palette, realistic detail, contemporary magazine look, crisp composition",
+      "image": "https://i.pinimg.com/736x/0d/40/43/0d40438c2b9e67bba34ba4d91def5a97.jpg",
+      "tags": ["street", "editorial", "urban"]
+    },
+    {
+      "id": "timeless-closeup",
+      "title": "Timeless Close-Up",
+      "prompt": "adult asian woman close-up portrait in black and white, soft wind in hair, elegant expression, cinematic contrast, refined skin detail, minimalist backdrop, classic portrait photography, graceful mood, sophisticated framing, gallery-quality finish",
+      "image": "https://i.pinimg.com/736x/db/49/27/db49276c2e8cf6f8ca6d4f9ca86dbebe.jpg",
+      "tags": ["closeup", "black-white", "beauty"]
+    }
+  ]
+}

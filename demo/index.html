@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dark HUB Browser Preview</title>
+  <style>
+    :root {
+      --workspace-1: #151a1f;
+      --workspace-2: #10151a;
+      --node-shell: linear-gradient(180deg, #f7f4ef 0%, #ece6db 100%);
+      --node-card: linear-gradient(180deg, #fbfaf7 0%, #f3ede4 100%);
+      --border: rgba(47, 66, 74, 0.16);
+      --text: #20333a;
+      --muted: #5f7379;
+      --accent: #28535f;
+      --accent-soft: rgba(40, 83, 95, 0.12);
+      --accent-warm: #b47c48;
+      --shadow: 0 20px 50px rgba(8, 12, 15, 0.28);
+      --card-shadow: 0 18px 34px rgba(24, 42, 48, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: "Bahnschrift", "Segoe UI Variable", "Trebuchet MS", sans-serif;
+      color: #eef2f3;
+      background:
+        radial-gradient(circle at top left, rgba(52, 95, 109, 0.18), transparent 30%),
+        linear-gradient(180deg, var(--workspace-1) 0%, var(--workspace-2) 100%);
+    }
+
+    body {
+      padding: 28px;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: minmax(320px, 440px) minmax(380px, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar {
+      padding: 24px;
+      position: sticky;
+      top: 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(180, 124, 72, 0.16);
+      color: #f1d5b3;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .sidebar h1 {
+      margin: 16px 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.02;
+    }
+
+    .sidebar p {
+      margin: 0 0 14px;
+      color: rgba(232, 239, 241, 0.78);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .hint-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hint-list li {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(232, 239, 241, 0.88);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+
+    .workspace {
+      min-height: calc(100vh - 56px);
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(24, 30, 36, 0.98) 0%, rgba(16, 21, 26, 0.98) 100%);
+      background-size: 36px 36px, 36px 36px, auto;
+    }
+
+    .workspace::before,
+    .workspace::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      border-radius: 999px;
+      filter: blur(70px);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .workspace::before {
+      width: 220px;
+      height: 220px;
+      right: 50px;
+      top: 28px;
+      background: rgba(63, 115, 131, 0.18);
+    }
+
+    .workspace::after {
+      width: 180px;
+      height: 180px;
+      left: 18px;
+      bottom: 30px;
+      background: rgba(180, 124, 72, 0.16);
+    }
+
+    .node-window {
+      width: min(100%, 430px);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 26px 55px rgba(0, 0, 0, 0.38);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+      z-index: 1;
+    }
+
+    .node-titlebar {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      background: linear-gradient(180deg, #335f6b 0%, #244851 100%);
+      color: #f6fbfb;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    .socket-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .socket {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #cde8ed;
+      box-shadow: 0 0 0 3px rgba(205, 232, 237, 0.14);
+    }
+
+    .node-body {
+      padding: 14px;
+      background: var(--node-shell);
+      min-height: 690px;
+    }
+
+    .darkhub-shell {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--text);
+    }
+
+    .darkhub-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .darkhub-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .darkhub-brand strong {
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .darkhub-brand span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .darkhub-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .darkhub-controls,
+    .darkhub-footer,
+    .darkhub-toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+
+    .darkhub-toolbar {
+      grid-template-columns: 1fr auto auto;
+    }
+
+    .darkhub-input,
+    .darkhub-select,
+    .darkhub-prompt {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--text);
+      outline: none;
+    }
+
+    .darkhub-input,
+    .darkhub-select {
+      min-height: 40px;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+
+    .darkhub-button {
+      min-height: 40px;
+      border: 0;
+      border-radius: 14px;
+      background: var(--accent);
+      color: #f8faf8;
+      padding: 0 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 120ms ease, background 120ms ease;
+    }
+
+    .darkhub-button:hover {
+      transform: translateY(-1px);
+      background: #204650;
+    }
+
+    .darkhub-button.alt {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .darkhub-card {
+      flex: 1;
+      min-height: 0;
+      border-radius: 22px;
+      border: 1px solid rgba(47, 66, 74, 0.12);
+      background: var(--node-card);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .darkhub-preview {
+      position: relative;
+      height: 264px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #315b68 0%, #14242b 100%);
+    }
+
+    .darkhub-preview img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .darkhub-source {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(12, 22, 26, 0.62);
+      color: #eef4f3;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .darkhub-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 16px;
+      min-height: 0;
+      flex: 1;
+    }
+
+    .darkhub-title {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .darkhub-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .darkhub-tag {
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(180, 124, 72, 0.12);
+      color: #7d5730;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .darkhub-prompt {
+      flex: 1;
+      min-height: 220px;
+      resize: vertical;
+      padding: 14px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .darkhub-status {
+      min-height: 18px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .darkhub-meta {
+      color: rgba(232, 239, 241, 0.8);
+      font-size: 13px;
+      margin-top: 10px;
+      line-height: 1.55;
+    }
+
+    .darkhub-meta code {
+      color: #fff7eb;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .workspace {
+        min-height: auto;
+        padding: 20px;
+      }
+
+      .node-window {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="panel sidebar">
+      <span class="eyebrow">Browser Preview</span>
+      <h1>dark HUB ni oddiy browserda ko'rish</h1>
+      <p>Bu sahifa ComfyUI ichidagi node ko'rinishini browser uchun preview qiladi. Shu yerda prompt, rasm, sync URL va tanlash logikasi qanday ishlashini oldindan ko'rib olasiz.</p>
+      <p>Local server bilan ochsangiz <code>/catalog/prompts.json</code> ni o'qiydi. Xohlasangiz GitHub raw URL berib remote katalogni ham tekshirishingiz mumkin.</p>
+      <ul class="hint-list">
+        <li><strong>1.</strong> Pastdagi fake ComfyUI workspace ichida node ko'rinadi.</li>
+        <li><strong>2.</strong> <code>SYNC</code> bossangiz katalog qayta yuklanadi.</li>
+        <li><strong>3.</strong> <code>PREV</code> va <code>NEXT</code> bilan promptlar orasida yurasiz.</li>
+        <li><strong>4.</strong> Bu preview uchun HTML/CSS/JS yetadi; ComfyUI dagi real backend esa baribir Python bilan ishlaydi.</li>
+      </ul>
+      <div class="darkhub-meta">
+        Tavsiya: repo ildizidan local server oching va <code>/demo/</code> ga kiring.
+      </div>
+    </aside>
+
+    <section class="panel workspace">
+      <div class="node-window">
+        <div class="node-titlebar">
+          <div class="socket-row">
+            <span class="socket"></span>
+            <span>dark HUB Prompt Library</span>
+          </div>
+          <span>Browser Demo</span>
+        </div>
+
+        <div class="node-body">
+          <div class="darkhub-shell">
+            <div class="darkhub-head">
+              <div class="darkhub-brand">
+                <strong>dark HUB</strong>
+                <span>remote prompt library</span>
+              </div>
+              <div class="darkhub-badge" id="syncBadge">Sync Ready</div>
+            </div>
+
+            <div class="darkhub-controls">
+              <input id="catalogUrl" class="darkhub-input" placeholder="GitHub raw JSON URL">
+              <button id="syncButton" class="darkhub-button">SYNC</button>
+            </div>
+
+            <div class="darkhub-toolbar">
+              <select id="promptSelect" class="darkhub-select"></select>
+              <select id="modeSelect" class="darkhub-select">
+                <option value="remote_first">Remote first</option>
+                <option value="local_only">Local only</option>
+                <option value="remote_only">Remote only</option>
+              </select>
+              <button id="copyButton" class="darkhub-button alt">COPY</button>
+            </div>
+
+            <div class="darkhub-card">
+              <div class="darkhub-preview">
+                <img id="previewImage" src="../catalog/previews/placeholder.svg" alt="Prompt preview">
+                <div id="sourceBadge" class="darkhub-source">LOCAL</div>
+              </div>
+
+              <div class="darkhub-content">
+                <h2 id="promptTitle" class="darkhub-title">Prompt preview</h2>
+                <div id="tags" class="darkhub-tags"></div>
+                <textarea id="promptText" class="darkhub-prompt" readonly></textarea>
+              </div>
+            </div>
+
+            <div class="darkhub-footer">
+              <button id="prevButton" class="darkhub-button alt">PREV</button>
+              <button id="nextButton" class="darkhub-button alt">NEXT</button>
+            </div>
+
+            <div id="status" class="darkhub-status"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
