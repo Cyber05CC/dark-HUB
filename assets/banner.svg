@@ -1,0 +1,21 @@
+<svg width="2100" height="900" viewBox="0 0 2100 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="2100" height="900" rx="72" fill="#0B1120"/>
+  <rect x="24" y="24" width="2052" height="852" rx="56" fill="url(#panel)" stroke="rgba(247,247,247,0.06)"/>
+  <circle cx="1760" cy="170" r="220" fill="#6366F1" fill-opacity="0.12"/>
+  <circle cx="1560" cy="720" r="260" fill="#6366F1" fill-opacity="0.08"/>
+  <rect x="120" y="132" width="248" height="248" rx="56" fill="#11192A" stroke="rgba(247,247,247,0.08)"/>
+  <path d="M190 334V178H238C274 178 298 199 298 232C298 263 275 285 239 285H218V334H190Z" fill="#F7F7F7"/>
+  <path d="M218 260H237C257 260 270 248 270 232C270 215 257 203 237 203H218V260Z" fill="#6366F1"/>
+  <path d="M126 520H834" stroke="#6366F1" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round"/>
+  <path d="M126 580H1260" stroke="white" stroke-opacity="0.13" stroke-width="22" stroke-linecap="round"/>
+  <path d="M126 644H1028" stroke="white" stroke-opacity="0.09" stroke-width="22" stroke-linecap="round"/>
+  <text x="418" y="248" fill="#F7F7F7" font-family="Poppins, Segoe UI, sans-serif" font-size="112" font-weight="500">darkHUB</text>
+  <text x="418" y="348" fill="rgba(247,247,247,0.62)" font-family="Poppins, Segoe UI, sans-serif" font-size="48" font-weight="400">Prompt Library for ComfyUI</text>
+  <text x="126" y="780" fill="rgba(247,247,247,0.46)" font-family="Poppins, Segoe UI, sans-serif" font-size="34" font-weight="400">Remote catalogs, workflow-portable prompts, image-first browsing UI</text>
+  <defs>
+    <linearGradient id="panel" x1="120" y1="48" x2="1980" y2="876" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101827"/>
+      <stop offset="1" stop-color="#0B1120"/>
+    </linearGradient>
+  </defs>
+</svg>

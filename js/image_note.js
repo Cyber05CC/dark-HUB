@@ -3,8 +3,6 @@ import { app } from "/scripts/app.js";
 const TARGET_CLASS = "darkHUB";
 const API_BASE = "/darkhub/api";
 const PLACEHOLDER_URL = `${API_BASE}/files/previews/placeholder.svg`;
-const TELEGRAM_WEB_URL = "https://t.me/darken_HUB";
-const TELEGRAM_APP_URL = "tg://resolve?domain=darken_HUB";
 const NODE_SIZE = [408, 868];
 const UI_HEIGHT = 788;
 const UI_MIN_HEIGHT = 620;
@@ -578,56 +576,6 @@ function closeLightbox() {
     lightbox.node = null;
 }
 
-function openTelegramChannel() {
-    let fallbackTimer = null;
-    let launchedExternally = false;
-
-    const appLink = document.createElement("a");
-    appLink.href = TELEGRAM_APP_URL;
-    appLink.rel = "noopener noreferrer";
-    appLink.style.display = "none";
-
-    const cleanup = () => {
-        if (fallbackTimer) {
-            window.clearTimeout(fallbackTimer);
-            fallbackTimer = null;
-        }
-        window.removeEventListener("blur", handleBlur);
-        document.removeEventListener("visibilitychange", handleVisibilityChange);
-        appLink.remove();
-    };
-
-    const handleBlur = () => {
-        launchedExternally = true;
-        cleanup();
-    };
-
-    const handleVisibilityChange = () => {
-        if (!document.hidden) return;
-        launchedExternally = true;
-        cleanup();
-    };
-
-    window.addEventListener("blur", handleBlur, { once: true });
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    document.body.appendChild(appLink);
-
-    try {
-        appLink.click();
-    } catch {
-        cleanup();
-        window.open(TELEGRAM_WEB_URL, "_blank", "noopener,noreferrer");
-        return;
-    }
-
-    fallbackTimer = window.setTimeout(() => {
-        cleanup();
-        if (!launchedExternally && !document.hidden && document.hasFocus()) {
-            window.open(TELEGRAM_WEB_URL, "_blank", "noopener,noreferrer");
-        }
-    }, 900);
-}
-
 function buildUi(node) {
     injectStyles();
     ensureLightbox();
@@ -691,28 +639,6 @@ function buildUi(node) {
     footer.append(prevBtn, footerSpacer, nextBtn);
     stage.appendChild(footer);
 
-    const telegramWrap = document.createElement("div");
-    telegramWrap.className = "dh-telegram-wrap";
-
-    const telegramCard = document.createElement("button");
-    telegramCard.className = "dh-telegram-card";
-    telegramCard.title = TELEGRAM_WEB_URL;
-    telegramCard.setAttribute("aria-label", `Open Telegram channel ${TELEGRAM_WEB_URL}`);
-    telegramCard.innerHTML = `
-        <div class="dh-telegram-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-                <path d="M20.64 4.36 3.94 10.8c-1.14.46-1.13 1.1-.21 1.38l4.29 1.34 1.65 5.15c.2.56.1.78.69.78.45 0 .65-.2.9-.45l2.08-2.02 4.33 3.2c.8.44 1.37.21 1.57-.74l2.84-13.38c.29-1.16-.44-1.69-1.44-1.24Z" fill="currentColor"/>
-            </svg>
-        </div>
-        <div class="dh-telegram-info">
-            <div class="dh-telegram-title">darkHUB</div>
-            <div class="dh-telegram-link">t.me/darken_HUB</div>
-        </div>
-        <div class="dh-telegram-arrow">></div>`;
-
-    telegramWrap.appendChild(telegramCard);
-    stage.appendChild(telegramWrap);
-
     shell.appendChild(stage);
 
     const status = document.createElement("div");
@@ -734,7 +660,6 @@ function buildUi(node) {
         preview,
         prevBtn,
         nextBtn,
-        telegramCard,
         statusEl: status,
         statusTimer: null,
         catalog: null,
@@ -827,10 +752,6 @@ function bindEvents(node) {
     ui.preview.addEventListener("click", () => openLightbox(node));
     ui.prevBtn.addEventListener("click", () => stepSelection(node, -1));
     ui.nextBtn.addEventListener("click", () => stepSelection(node, 1));
-    ui.telegramCard.addEventListener("click", (event) => {
-        event.stopPropagation();
-        openTelegramChannel();
-    });
 }
 
 app.registerExtension({

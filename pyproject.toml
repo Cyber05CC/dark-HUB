@@ -1,11 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "comfyui-darkhub"
-description = "Remote-synced prompt library node for ComfyUI with image-first browsing UI and workflow-portable prompt catalogs."
-version = "0.1.0"
+name = "darkhub-prompt-library"
+description = "A workflow-portable prompt library node for ComfyUI with remote catalog syncing and image-first prompt browsing."
+version = "0.2.0"
 readme = "README.md"
-license = { text = "MIT" }
-dependencies = [
-  "aiohttp>=3.9,<4.0",
+license = { file = "LICENSE.txt" }
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+classifiers = [
+  "Operating System :: OS Independent",
 ]
 
 [project.urls]
@@ -13,7 +19,12 @@ Repository = "https://github.com/Cyber05CC/dark-HUB"
 Documentation = "https://github.com/Cyber05CC/dark-HUB#readme"
 "Bug Tracker" = "https://github.com/Cyber05CC/dark-HUB/issues"
 
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
 [tool.comfy]
 PublisherId = "cyber05cc"
-DisplayName = "ComfyUI darkHUB"
-Icon = "https://raw.githubusercontent.com/Cyber05CC/dark-HUB/main/js/darkHUBcreator.png"
+DisplayName = "darkHUB Prompt Library"
+Icon = "https://raw.githubusercontent.com/Cyber05CC/dark-HUB/main/assets/icon.svg"
+Banner = "https://raw.githubusercontent.com/Cyber05CC/dark-HUB/main/assets/banner.svg"
+includes = ["js", "catalog", "assets"]
