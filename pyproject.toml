@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "darkhub-prompt-library"
 description = "A workflow-portable prompt library node for ComfyUI with remote catalog syncing and image-first prompt browsing."
-version = "0.2.2"
+version = "0.2.3"
 readme = "README.md"
 license = { file = "LICENSE.txt" }
 requires-python = ">=3.10"
