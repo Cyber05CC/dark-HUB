@@ -3,6 +3,7 @@ import { app } from "/scripts/app.js";
 const TARGET_CLASS = "darkHUB";
 const API_BASE = "/darkhub/api";
 const PLACEHOLDER_URL = `${API_BASE}/files/previews/placeholder.svg`;
+const LOGO_URL = new URL("./darkHUB-logo-badge.png", import.meta.url).href;
 const TELEGRAM_WEB_URL = "https://t.me/darken_HUB";
 const TELEGRAM_APP_URL = "tg://resolve?domain=darken_HUB";
 const NODE_SIZE = [408, 868];
@@ -67,6 +68,7 @@ function injectStyles() {
         flex-direction:column;
     }
     .dh-preview{
+        position:relative;
         width:100%;
         flex:1 1 auto;
         min-height:320px;
@@ -75,6 +77,28 @@ function injectStyles() {
         background:#0a0f19;
         display:block;
         cursor:pointer;
+    }
+    .dh-logo-badge{
+        position:absolute;
+        top:14px;
+        left:14px;
+        width:84px;
+        height:84px;
+        overflow:hidden;
+        border-radius:22px;
+        border:1px solid rgba(255,255,255,.16);
+        background:#ffffff;
+        box-shadow:0 16px 36px rgba(5,8,20,.28);
+        pointer-events:none;
+    }
+    .dh-logo-badge img{
+        width:100%;
+        height:100%;
+        display:block;
+        object-fit:cover;
+        object-position:center;
+        image-rendering:auto;
+        transform:translateZ(0);
     }
     .dh-img{
         width:100%;
@@ -645,7 +669,18 @@ function buildUi(node) {
     img.className = "dh-img";
     img.alt = "Prompt preview";
     img.src = PLACEHOLDER_URL;
+
+    const logoBadge = document.createElement("div");
+    logoBadge.className = "dh-logo-badge";
+
+    const logo = document.createElement("img");
+    logo.alt = "darkHUB logo";
+    logo.src = LOGO_URL;
+    logo.decoding = "sync";
+
+    logoBadge.appendChild(logo);
     preview.appendChild(img);
+    preview.appendChild(logoBadge);
     stage.appendChild(preview);
 
     const content = document.createElement("div");
