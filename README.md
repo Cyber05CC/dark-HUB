@@ -14,9 +14,9 @@
 
 - `dark HUB Prompt Library`
   Outputs:
-  - `prompt`
-  - `title`
-  - `preview_url`
+    - `prompt`
+    - `title`
+    - `preview_url`
 
 ## Catalog Format
 
@@ -24,18 +24,18 @@ The remote catalog is a JSON file with this shape:
 
 ```json
 {
-  "name": "dark HUB Prompt Catalog",
-  "version": "0.2.0",
-  "updated_at": "2026-03-26T12:00:00Z",
-  "prompts": [
-    {
-      "id": "fashion-editorial",
-      "title": "Fashion Editorial",
-      "prompt": "editorial fashion portrait, tailored styling, clean composition",
-      "image": "previews/fashion-editorial.svg",
-      "tags": ["fashion", "editorial"]
-    }
-  ]
+    "name": "dark HUB Prompt Catalog",
+    "version": "1.1.0",
+    "updated_at": "2026-03-26T12:00:00Z",
+    "prompts": [
+        {
+            "id": "fashion-editorial",
+            "title": "Fashion Editorial",
+            "prompt": "editorial fashion portrait, tailored styling, clean composition",
+            "image": "previews/fashion-editorial.svg",
+            "tags": ["fashion", "editorial"]
+        }
+    ]
 }
 ```
 
